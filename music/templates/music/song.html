@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'music_player/css/style.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <form action="audio" method = "post" enctype="multipart/form-data"> 
+      {% csrf_token %} 
+      {{ form }} 
+      <button type="submit">Upload</button> 
+      
+      <audio src="{{ song.file.url }}" autoplay></audio>
+  </form> -->
+
+  <!-- <div id="singlesong">
+    <p>Name: {{ song }}</p>
+    <p>Artist: <a href="/artists/{{ song.artist }}/">{{ song.artist }}</a></p>
+    <p>Album: <a href="/albums/{{ song.album }}/">{{ song.album }}</a></p>
+    <p><audio controls="controls">
+        <source src="{{ song.audio_track.url }}" type="audio/mp3" />
+</audio> -->
+
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="myfile">
+  <button type="submit">Upload</button>
+</form>
+
+{% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %}
+
+  <p><a href="{% url 'home' %}">Return to home</a></p>
+</body>
+</html>

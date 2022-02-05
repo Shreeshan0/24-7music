@@ -7,25 +7,28 @@
 
 .nav-item a{
     color: white;
-	background-color: #24262b;
-    
+	background-color: #222327;
+    margin-right: 40px;
+	font-size: 18px;
 }
 
-.nav li a{
+/* .nav li a{
     margin-right: 25px;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 22px;
 
-}
+} */
 
 
 .navbar{
 	height: 80px;
 	background-color: #24262b;
+	margin-bottom: 2px;
 }
 #myNavbar{
 	background-color:#24262b;
 }
+
 
 
 /* login */
@@ -140,3 +143,7 @@ ul{
 }
 
 
+.new{
+	padding: 100px;
+	background-color: black;
+}
